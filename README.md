@@ -6,7 +6,7 @@ The documentation provided with this library uses pages from cppreference.com as
 
 they provide the licenses which they use here:
 
-           https://en.cppreference.com/w/Cppreference:Copyright/GDFL
+https://en.cppreference.com/w/Cppreference:Copyright/GDFL
 https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA
 
 
