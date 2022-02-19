@@ -1,16 +1,18 @@
 # Console Input Parser Library
  
-The documentation provided with this library uses pages from cppreference.com as templates. As such, that specific part of this repository is licensed under the same licenses as cppreference.com (Creative Commons Attribution-Sharealike 3.0 Unported License (CC-BY-SA) and by the GNU Free Documentation License (GFDL) (unversioned, with no invariant sections, front-cover texts, or back-cover texts)
+The documentation provided with this library uses pages from cppreference.com as templates. As such, that specific part of this repository is licensed under the same licenses as cppreference.com (Creative Commons Attribution-Sharealike 3.0 Unported License (CC-BY-SA) and by the GNU Free Documentation License (GFDL) (unversioned, with no invariant sections, front-cover texts, or back-cover texts).
+
+(cppreference is a wiki which aims to be an accessible version of the C++ standard)
+
 they provide the licenses which they use here:
 https://en.cppreference.com/w/Cppreference:Copyright/GDFL
 https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA
 
-they are a wiki whose goal is more or less to provide an accesible version of the proper C++ standard.
 
 Otherwise, you can do anything you like with this, and I am not liable for anything related to this (code provided as-is and all that).
 
 
-Legal preamble out of the way, documentation can be found in the marked folder. "home.html" in that folder is the place to start, I reccommend creating a shortcut to it which is accessable outside the folder somewhere
+Legal preamble out of the way, documentation can be found in the marked folder. "home.html" in that folder is the place to start, I reccommend creating a shortcut to it which is accessable outside the folder somewhere.
 I got a bit lazy with documentation near the end of this. As a result, I did not optimise the full example provided with the library to demonstrate the most things possible, and there are a few things which are not currently in the documentation.
 The latter is very likely to change whenever I update this. The former may not, unless someone makes a good example for me.
 This library has been tested to a reasonable extent, but there may still be significant glitches. There are certainly some flaws with how it works, all of which are documented. If said flaws get in your way, or there are glitches, tell me and I'll fix whatever is giving you problems.
