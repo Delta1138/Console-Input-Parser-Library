@@ -4,6 +4,7 @@ The documentation provided with this library uses pages from cppreference.com as
 they provide the licenses which they use here:
 https://en.cppreference.com/w/Cppreference:Copyright/GDFL
 https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA
+
 they are a wiki whose goal is more or less to provide an accesible version of the proper C++ standard.
 
 Otherwise, you can do anything you like with this, and I am not liable for anything related to this (code provided as-is and all that).
