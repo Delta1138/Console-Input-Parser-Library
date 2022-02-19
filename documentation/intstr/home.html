@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs"><head>
+<title>CIP::intstr</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="intstr&amp;action=edit">
+<link rel="edit" title="Edit" href="intstr&amp;action=edit">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="cppreference.com (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.cppreference.com/mwiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%2CMathJax%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+
+
+
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .macro {color: #e81eeb;}
+.cpp.source-cpp .class {color: #eb7100;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string_intstr skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">CIP::</span>intstr</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="cpp.html" title="cpp">cpp</a>&lrm; | <a href="string.html" title="cpp/string">string</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+<!-- -HEADER TABLE AND DESCRIPTION- -->
+
+<table class="t-dcl-begin"><tbody>
+
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">
+<span class="kw1">struct</span> intstr<span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+
+
+<p>
+CIP::<span class="class">intstr</span> represents a simple descision tree which operates on a int which it wraps, where an 
+input string either throws an <a href="../exceptions/invalid_input.html">invalid_input</a> or causes the wrapped <span class="kw4">int</span> to be set to a corresponding value.<br>
+It holds three things: A <span class="kw4">int</span>*, and two <span class="kw4">const char</span>* arrays (which can be <span class="kw4">nullptr</span>) 
+When <span class="class">intstr</span>::<a href="assignValue.html">assignValue</a>(std::<span class="class">string</span> s) runs, it checks if s is equal to any of the contained strings. 
+If it is, the wrapped int is set to the corresponding value. If not, it throws an <a href="../exceptions/invalid_input.html">invalid_input</a> if it was run as part 
+of <a href="../input_handler/home.html">input_handler</a>::<a href="../input_handler/interpretInput.html">interpretInput</a>(), and otherwise throws an std::runtime_error.<br>
+The primary use of this class is that it is a type accepted by input_handler, so it can be used to create a switch which sets the program's mode based on a user-input string.
+</p>
+
+
+
+ <!-- END OF DESCRIPTION -->
+
+
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Template_parameters.html"><span class="tocnumber">1</span> <span class="toctext">Template parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Member_types.html"><span class="tocnumber">2</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Member_functions.html"><span class="tocnumber">3</span> <span class="toctext">Member functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Element_access.html"><span class="tocnumber">3.1</span> <span class="toctext">Element access</span></a></li>
+<li class="toclevel-2"><a href="#Iterators.html"><span class="tocnumber">3.2</span> <span class="toctext">Iterators</span></a></li>
+<li class="toclevel-2"><a href="#Capacity.html"><span class="tocnumber">3.3</span> <span class="toctext">Capacity</span></a></li>
+<li class="toclevel-2"><a href="#Operations.html"><span class="tocnumber">3.4</span> <span class="toctext">Operations</span></a></li>
+<li class="toclevel-2"><a href="#Search.html"><span class="tocnumber">3.5</span> <span class="toctext">Search</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Constants.html"><span class="tocnumber">4</span> <span class="toctext">Constants</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Non-member_functions.html"><span class="tocnumber">5</span> <span class="toctext">Non-member functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Input.2Foutput"><span class="tocnumber">5.1</span> <span class="toctext">Input/output</span></a></li>
+<li class="toclevel-2"><a href="#Numeric_conversions.html"><span class="tocnumber">5.2</span> <span class="toctext">Numeric conversions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Literals.html"><span class="tocnumber">6</span> <span class="toctext">Literals</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Helper_classes.html"><span class="tocnumber">7</span> <span class="toctext">Helper classes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Deduction_guides_.28since_C.2B.2B17.29"><span class="tocnumber">8</span> <span class="toctext">Deduction guides <span></span></span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Notes.html"><span class="tocnumber">9</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Example.html"><span class="tocnumber">10</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also.html"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+
+<!---- >
+
+<h3><span class="editsection">[<a href="intstr&amp;action=edit&amp;section=1" title="Edit section: Template parameters">edit</a>]</span> <span class="mw-headline" id="Template_parameters">Template parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td>  CharT
+</td>
+<td> -
+</td>
+<td>  character type
+</td></tr>
+<tr class="t-par">
+<td>  Traits
+</td>
+<td> -
+</td>
+<td>  traits class specifying the operations on the character type
+</td></tr>
+<tr class="t-par">
+<td>  Allocator
+</td>
+<td> -
+</td>
+<td>  <a href="Allocator.html" title="cpp/named req/Allocator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span></a> type used to allocate internal storage
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="intstr&amp;action=edit&amp;section=2" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>traits_type</code>
+</td>
+<td>  <code>Traits</code>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>value_type</code>
+</td>
+<td>  <code>CharT</code>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <code>allocator_type</code>
+</td>
+<td>  <code>Allocator</code> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_allocator_type&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>size_type</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder"><tbody><tr class="t-rev t-until-cxx11"><td><code>Allocator::size_type</code></td>
+<td></td></tr><tr class="t-rev t-since-cxx11"><td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw702">CIP::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Allocator<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">size_type</span></span></span></td>
+<td></td></tr></tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_size_type&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>difference_type</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder"><tbody><tr class="t-rev t-until-cxx11"><td><code>Allocator::difference_type</code></td>
+<td></td></tr><tr class="t-rev t-since-cxx11"><td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw702">CIP::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Allocator<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">difference_type</span></span></span></td>
+<td></td></tr></tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_difference_type&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>reference</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type<span class="sy3">&amp;</span></span></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_reference&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>const_reference</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> value_type<span class="sy3">&amp;</span></span></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_const_reference&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>pointer</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder"><tbody><tr class="t-rev t-until-cxx11"><td><code>Allocator::pointer</code></td>
+<td></td></tr><tr class="t-rev t-since-cxx11"><td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw702">CIP::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Allocator<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">pointer</span></span></span></td>
+<td></td></tr></tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_pointer&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>const_pointer</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder"><tbody><tr class="t-rev t-until-cxx11"><td><code>Allocator::const_pointer</code></td>
+<td></td></tr><tr class="t-rev t-since-cxx11"><td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw702">CIP::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Allocator<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">const_pointer</span></span></span></td>
+<td></td></tr></tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_const_pointer&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>iterator</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder">
+<tbody><tr class="t-rev t-until-cxx20"><td>
+<p><a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a> and <a href="ContiguousIterator.html" title="cpp/named req/ContiguousIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyContiguousIterator</span></a> to <code>value_type</code>
+</p>
+</td>
+<td></td></tr>
+<tr class="t-rev t-since-cxx20"><td>
+<p><a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a>, <a href="contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>, and <a href="ConstexprIterator.html" title="cpp/named req/ConstexprIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">ConstexprIterator</span></a> to <code>value_type</code>
+</p>
+</td>
+<td></td></tr>
+</tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_iterator&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>const_iterator</code>
+</td>
+<td>   <table class="t-rev-begin t-rev-begin-noborder">
+<tbody><tr class="t-rev t-until-cxx20"><td>
+<p><a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a> and <a href="ContiguousIterator.html" title="cpp/named req/ContiguousIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyContiguousIterator</span></a> to <code>const value_type</code>
+</p>
+</td>
+<td></td></tr>
+<tr class="t-rev t-since-cxx20"><td>
+<p><a href="RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a>, <a href="contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>, and <a href="ConstexprIterator.html" title="cpp/named req/ConstexprIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">ConstexprIterator</span></a> to <code>const value_type</code>
+</p>
+</td>
+<td></td></tr>
+</tbody></table> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_const_iterator&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>reverse_iterator</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator"><span class="kw660">CIP::<span class="me2">reverse_iterator</span></span></a><span class="sy1">&lt;</span>iterator<span class="sy1">&gt;</span></span></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_reverse_iterator&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>const_reverse_iterator</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator"><span class="kw660">CIP::<span class="me2">reverse_iterator</span></span></a><span class="sy1">&lt;</span>const_iterator<span class="sy1">&gt;</span></span></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_const_reverse_iterator&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+<!---->
+
+<h3><span class="editsection">[<a href="basic_string&amp;action=edit&amp;section=2" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member variables</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Name
+</td>
+<td>  <i>Description</i>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <code>int *</code>
+</td>
+<td>  <code>var</code>
+</td>
+<td>  <i>the variable which the struct wraps</i>
+</td></tr>
+
+</tbody></table>
+
+
+<h3><span class="editsection">[<a href="intstr&amp;action=edit&amp;section=3" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="intstr.html" title="cpp/string/basic string/basic string"> <span class="t-lines"><span>(constructor)</span></span></a></div></div>
+</td>
+<td>  constructs an <code>intstr</code> <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/intstr/dsc_constructor&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><span class="t-lines"><span>(destructor)</span></span></div></div>
+</td>
+<td>  destroys the struct, deallocating the memory used for the string lists <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setMarkersFor.html" title="setMarkersFor"> <span class="t-lines"><span>setMarkersFor</span></span></a></div></div>
+</td>
+<td>    maps strings to an integer value <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/intstr/dsc_assign&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="assignValue.html" title="assignValue"> <span class="t-lines"><span>assignValue</span></span></a></div></div>
+</td>
+<td>    takes an input string and checks it against the set string lists to set *var. This function is automatically called by <a href="../input_handler/home.html" title="input handler">input_handler</a>, so there should never be any reason to call it manually <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/intstr/dsc_assign&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+
+<h3><span class="editsection">[<a href="intstr&amp;action=edit&amp;section=9" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example">
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;CIP.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">const int</span> create  = 0<span class="sy4">;</span>
+    <span class="kw4">const int</span> destroy = 1<span class="sy4">;</span>
+    <span class="kw4">const int</span> modify  = 2<span class="sy4">;</span>
+    <span class="kw4">const int</span> invert  = 3<span class="sy4">;</span>
+    <span class="kw4">const int</span> copy    = 4<span class="sy4">;</span>
+    <span class="kw4">const int</span> rename  = 5<span class="sy4">;</span>
+    <span class="kw4">int</span> mode<span class="sy4">;</span>
+    <span class="kw4">int</span> example2<span class="sy4">;</span>
+    <span class="kw4">int</span> example3<span class="sy4">;</span>
+&nbsp
+    <span class="co1">// Wrapping the int vars and declaring the first set of matching strings for each</span>
+    CIP<span class="sy4">::</span><span class="class">intstr</span> modewrap<span class="br0">(</span><span class="st0">mode, </span><span class="kw4">create</span>, "c", "create"<span class="br0">)</span><span class="sy4">;</span>
+    CIP<span class="sy4">::</span><span class="class">intstr</span>   e2wrap<span class="br0">(</span><span class="st0">example, </span><span class="kw4">10</span>, "ten"<span class="br0">)</span><span class="sy4">;</span>
+    CIP<span class="sy4">::</span><span class="class">intstr</span>   e3wrap<span class="br0">(</span><span class="st0">example, </span><span class="kw4">999</span>, "high"<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// declaring the rest of the matching strings</span>
+      e3wrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>-999, "low"<span class="br0">)</span><span class="sy4">;</span>
+      e2wrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>11, "eleven"<span class="br0">)</span><span class="sy4">;</span>
+      e2wrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>-1, "negone", "negOne", "neg_one"<span class="br0">)</span><span class="sy4">;</span>
+    modewrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>destroy, "d", "destroy"<span class="br0">)</span><span class="sy4">;</span>
+    modewrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>modify, "m", "modify"<span class="br0">)</span><span class="sy4">;</span>
+    modewrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>invert, "i", "invert"<span class="br0">)</span><span class="sy4">;</span>
+    modewrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>copy, "c", "copy"<span class="br0">)</span><span class="sy4">;</span>
+    modewrap.<span class="me1">setMarkersFor</span><span class="br0">(</span>rename, "r", "rename"<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// creating an input_handler which takes two command-line inputs and</span>
+    <span class="co1">// sets the three ints according to them</span>
+    <a href="../input_handler/home.html" title="Input Handler">CIP<span class="sy4">::</span><span class="class">input_handler</span></a> ih<span class="br0">(</span><span class="st0">argc, argv</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../home.html#macros"><span class="macro">CIP_ORDERED_START</span></a><span class="br0">(</span><span class="st0">ih</span><span class="br0">)</span><span class="sy4">;</span>
+    ih.<a href="../input_handler/setOrdered.html">setOrdered</a>(modewrap);
+    ih.<a href="../input_handler/setOrdered.html">setOrdered</a>(e2wrap);
+    ih.<a href="../input_handler/setOrdered.html">setOrdered</a>(e3wrap);
+    <a href="../home.html#macros"><span class="macro">CIP_ORDERED_END</span></a>(ih)<span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// sets the ints based on argv</span>
+    ih.<a href="../input_handler/interpretInput.html">interpretInput</a>();
+<span class="br0">}</span></pre></div></div>
+<p>Results:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1"> mode gets set to:
+  - 0 (destroy) if the first input is "d" or "destroy"
+  - 1 (modify)  if the first input is "m" or "modify"
+  - 2 (invert)  if the first input is "i" or "invert"
+  - 3 (copy)    if the first input is "c" or "copy"
+  - 4 (rename)  if the first input is "r" or "rename"
+
+ example2 gets set to:
+  - 10 if the second input is "ten"
+  - 11 if the second input is "eleven"
+  - -1 if the second input is "negone", "negOne" or "neg_one"
+  
+ example3 gets set to:
+  - 999 if the third input is "high"
+  - -999 if the third input is "low"
+  
+an invalid_input exception is thrown if any input 
+does not match one of the corresponding strings
+</pre></div></div> 
+</div>
+
+
+
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/string/intstr&amp;oldid=134916">https://en.cppreference.com/mwiki/index.php?title=cpp/string/intstr&amp;oldid=134916</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="Category:Pages_with_unreviewed_LWG_DR_marker.html" title="Category:Pages with unreviewed LWG DR marker">Pages with unreviewed LWG DR marker</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+		
+</body></html>

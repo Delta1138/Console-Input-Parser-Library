@@ -1,0 +1,6 @@
+Copy v and place it after <td><div> in the function table
+
+<span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <br>
+<p>&nbsp; &nbsp; <span class="kw1">class</span> ReturnT, <br>
+</p>
+<span class="sy1">&gt;</span> 

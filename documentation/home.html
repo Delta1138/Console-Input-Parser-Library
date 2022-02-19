@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs"><head>
+<title>Console input parser library</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="string&amp;action=edit">
+<link rel="edit" title="Edit" href="string&amp;action=edit">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Cppreference.Com (En)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.cppreference.com/mwiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Cppreference.Com Atom Feed" href="index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%2CMathJax%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+
+
+
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+
+                <h1 id="firstHeading" class="firstHeading">Console input parser library</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="cpp.html" title="Cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+			
+			
+			
+	
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+ 
+
+<p>
+The console input parser library provides a means of easily and clearly/concisely writing the code which interprets input passed to a program via the console. 
+It does so through the class input_handler, with help from a few other classes/functions defined by the library.
+</p><p>
+Because of the fact that this library had to be written to work with arbitrary numbers of variables of arbitrary, possibly differing types, 
+it makes heavy use of void pointers and variadic functions. Because of this, compiler-time type-checking is unreliable with this library. 
+Code involving this library is always simple enough that it isn't difficult to find bugs caused by passing bad types, just be aware of the fact that bugs can be caused by passing the wrong type, 
+and that you cannot rely on the compiler automatically converting types for you where void pointers and variadic functions are concerned.
+</p>
+
+
+
+ <!-- NOTE: THIS COMMENT MAY BE OBSCURING USEFUL CODE. I don't think it is, but it could be
+
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#CIP::basic_string.html"><span class="tocnumber">1</span> <span class="toctext"><span>CIP::basic_string</span></span></a></li>
+<li class="toclevel-1"><a href="#CIP::basic_string_view.html"><span class="tocnumber">2</span> <span class="toctext">CIP::basic_string_view</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Null-terminated_strings.html"><span class="tocnumber">3</span> <span class="toctext">Null-terminated strings</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Additional_support.html"><span class="tocnumber">4</span> <span class="toctext">Additional support</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#CIP::char_traits.html"><span class="tocnumber">4.1</span> <span class="toctext"><span>CIP::char_traits</span></span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Conversions_and_classification.html"><span class="tocnumber">4.2</span> <span class="toctext">Conversions and classification</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See_also.html"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+
+ -->
+
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc"><a href="input_handler/home.html" title="Cpp/String/Basic String">CIP::input_handler</a></span> </span></h3>
+<p> A class which provides a simple, farily comprehensive interface for constructing a command-line argument interpreter
+</p>
+
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc"><a href="boolstr/home.html" title="Cpp/String/Basic String">CIP::boolstr</a></span> </span></h3>
+<p> Wraps a boolean with a set of strings mapped to true/false, so that the bool will be set to true or false if an input for it matches a corresponding string.
+</p>
+
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc"><a href="intstr/home.html" title="Cpp/String/Basic String">CIP::intstr</a></span> </span></h3>
+<p> Wraps an int with a set of strings mapped to true/false, so that the int will be set to true or false if an input for it matches a corresponding string.
+</p>
+
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc"><a href="function/home.html" title="Cpp/String/Basic String">CIP::function</a></span> </span></h3>
+<p> A templated class which wraps a function pointer with its inputs, so that the function call may be delayed until its inputs are set and/or if/when it is the appropriate time for it to run.<br>
+Essentially, it's a means of delaying the excecution of code, so that input_handler can be given code to call at the right time, later.
+</p>
+
+
+ <!-- POP-UP SETUP -->
+<style type="text/css">
+dialog { display: block; }
+dialog:not(:target):not([open]) { display: none; }
+</style>
+
+  <!-- -EXCEPTIONS- -->
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc">Exceptions</span> </span></h3>
+
+<p> 
+These exceptions can be thrown by CIP::input_handler::interpretInput(), and are intended to be used for control flow.
+They provide an intuitive way of representing which code path will be followed given a specific kind of abnormal input.
+</p><p>
+Using exceptions for control flow is typically considered bad practice, and the fact that these are exceptions causes some inconviniences,
+so they may be replaced by a different structure in the future.
+</p><p>
+They all inherit from std::exception, so have a member function "what()" which describes the problem generically. Most of them also have member variables which 
+describe the problem in a way which is easier for a program to parse.
+</p>
+
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>user_requested_help</span></span></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when the user inputs /? or [whatever character denotes flags in your program]help as the first argument to the program  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="#not_enough_inputs" title="Not Enough Inputs"> <span class="t-lines"><span>not_enough_inputs</span></span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when the user provides fewer inputs than they are required to  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+<dialog id="not_enough_inputs">
+<h2>Member variables</h2>
+<p>
+int numIn
+</p><a href="#!">Close</a></dialog>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="#excessive_input" title="Excessive Input"> <span class="t-lines"><span>excessive_input</span></span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   if the input_handler is set to throw this exception, it is thrown when the user provides more inputs than there are variables to store them in  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+<dialog id="excessive_input">
+<h2>Member variables</h2>
+<p>
+int numIn
+</p><a href="#!">Close</a></dialog>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="#invalid_input" title="Invalid Input"> <span class="t-lines"><span>invalid_input</span></span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when an input is provided to a variable which cannot accept that input <nobr>(e.g. "hello" to an integral variable)</nobr>  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+<dialog id="invalid_input">
+<h2>Member variables</h2>
+<p><pre><code>
+bool type                 - indicates if the input was provided to a flag or ordered var         
+static const bool ordered - if type == ordered, the input was provided to an ordered var    
+static const bool flag    - if type == flag, the input was provided to a flag      
+static const int notAflag - used while constructing this class, ignore
+int index                 - either the orderedVar's or flag arg's index       
+std::string name          - the name of the flag, or "Ordered var [index + 1]"
+</code></pre></p><a href="#!">Close</a></dialog>
+</td></tr>
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="#test_failed" title="Test Failed"> <span class="t-lines"><span>test_failed</span></span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when a test fails during the final part of CIP::input_handler::interpretInput()  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_match&amp;action=edit">[edit]</a></span>
+<dialog id="test_failed">
+<h2>Member variables</h2>
+<p>
+int index
+</p><a href="#!">Close</a></dialog>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>programming_error</span></span></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when you set something up incorrectly, and that thing is encountered during CIP::input_handler::interpretInput()   <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>library_programming_error</span></span></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   thrown when _DEBUG is #defined by the compiler and something which should not be possible under any conditions happens. It should be reported to me when thrown (along with its what() output, and,
+if possible, the code which caused it).  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+
+  <!-- -STANDALONE FUNCTIONS- -->
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc">Helper functions</span> </span></h3>
+<p> These functions are used to generate inputs to some of input_handler's member functions in a way that is not error-prone
+</p>
+
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/fptr.html" title="Fptr"> <span class="t-lines">fptr</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a function pointer and list of arguments which can be reinterpret_cast to void*, and returns a pointer-to-CIP::function which contains them  <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/fref.html" title="Fref"> <span class="t-lines">fref</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a function pointer and list of argument variables passed by reference, and returns a pointer-to-CIP::function which contains them  <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/types.html" title="Types"> <span class="t-lines"><span>types</span></span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a list of type constants, and returns an array containing them  <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_match&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/sameType.html" title="Same Type"> <span class="t-lines">sameType</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a type constant T and integer X, and returns an array containing X Ts  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/vars.html" title="Vars"> <span class="t-lines">vars</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a set of variables by reference, and returns a void* array of pointers to those variables <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/tests.html" title="Tests"> <span class="t-lines">tests</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a list of ints (corresponding to tests contained in the input_handler, by index) and returns an array containing them <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/s/arrayVar.html" title="Array Var"> <span class="t-lines">arrayVar</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes an array, and returns an array of pointers to varaibles in that array. Must be used to properly pass an array to input_handler::setFlag()  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+
+
+
+  <!-- -TEST FUNCTIONS- -->
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc">Prebuilt test functions</span> </span></h3>
+<p> 
+These are functions which can be wrapped in CIP::functions and provided to input_handler::setTest(). As such, they all take arguments (unsigned int argc, void** argv). On their pages, the arguments which
+will be listed are those which argv is expected to contain. If such an argument is listed as not being of pointer type, it must be a pointer and is listed as such for the sake of making more intuitive sense
+</p>
+
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/t/stringsArentEqual.html" title="Strings Arent Equal"> <span class="t-lines">stringsArentEqual</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes any number of strings as input, and returns true if none of them match   <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/t/fileExistsAndCanBeOpened.html" title="File Exists And Can Be Opened"> <span class="t-lines">fileExistsAndCanBeOpened</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a string fn as input, and returns true if std::ifstream::open(fn) opens a file  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/t/yesno.html" title="Yesno"> <span class="t-lines">yesno</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   outputs a string to an ostream, then takes a char. If that char is y, returns true. If that char is n, returns false  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/t/NOT.html" title="Not"> <span class="t-lines">NOT</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes arguments to fptr, calls fptr to make a CIP::function from them, and returns !that_function.value()  <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/t/NOTF.html" title="Notf"> <span class="t-lines">NOTF</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a CIP::function f, and returns !f.value()  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+
+
+
+  <!-- -DEFAULT FUNCTIONS- -->
+<h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc">Prebuilt default functions</span> </span></h3>
+<p> 
+These are functions which can be wrapped in CIP::functions and provided to input_handler::set[Flag/OrderedVar]() to dynamically create default values for
+variables. So that they can be wrapped in CIP::function, they all take arguments (unsigned int argc, void** argv). On their pages, the arguments which
+will be listed are those which argv is expected to contain. If such an argument is listed as not being of pointer type, it must be a pointer and is listed as such for the sake of making more intuitive sense
+</p>
+
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/str.html" title="Str"> <span class="t-lines">
+<span>str</span>
+<span>cstr</span>
+</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a c-string as input and returns it (as an std::string or c-str)  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/ternary.html" title="Ternary"> <span class="t-lines">
+<span>ternary</span>
+<span>ternaryF</span>
+<span>Fternary</span>
+<span>FternaryF</span>
+</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   Takes a bool and two c-strings. Returns the first string if the bool is true, <nobr>otherwise returns the second</nobr>  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td>
+<td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/namePlus.html" title="Name Plus"> <span class="t-lines">
+<span>namePlus</span>
+<span>namePlusFunc</span>
+</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   Takes a pointer-to-string and one/two c-string/function<string> inputs. Returns the string pointed at + the string(s) input (if two string inputs, one is treated as a prefix rather than a suffix)  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/strFsum.html" title="Sum of function<string>s"> <span class="t-lines">strFsum</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   Takes any number of function<string> inputs and returns the sum of their value()s  <br> <span class="t-mark">(variadic function)</span> <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/fileExtension.html" title="File Extension"> <span class="t-lines">fileExtension</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a filename (i.e. string) as input, and returns its extension  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="f/d/noFileExtension.html" title="No File Extension"> <span class="t-lines">noFileExtension</span></a></div><div><span class="t-lines"></span></div></div>
+</td>
+<td>   takes a filename (i.e. string) as input, and returns it without its extension  <br>  <span class="editsection noprint plainlinks" title="Edit This Template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/dsc_regex_search&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+
+
+
+  <!-- MACROS -->
+<span id="macros"> <h3> <span class="mw-headline" id="CIP::input_handler"> <span class="t-lc">Macros</span> </span></h3> </span>
+
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines">
+<span>CIP_ORDERED_START(ih)</span>
+<span>CIP_ORDERED_END(ih)</span>
+<span>CIP_FLAGS_START(ih)</span>
+<span>CIP_FLAGS_END(ih)</span>
+<span>CIP_TESTS_START(ih)</span>
+<span>CIP_TESTS_END(ih)</span>
+</span></div><div><span class="t-lines"></span></div></div>
+</td>
+<td> These macros take an an input_handler as argument and call ih.setNum[OrderedVars|Flags|Tests](n)
+where n = the number of lines between START and END. They call that function on the line where START exists.<br>
+The purpose of these macros is to allow the number input to setNumX to change when the number of X changes without
+you needing to do anything.<br><br>
+They use goto and lables as part of their definition. In an attempt to guarentee that those labels never conflict with one another
+even in the unexpected case where there are multiple input_handlers,
+ih (the literal text passed to the macro) is concatenated in the middle of the lables.
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines">
+<span>CIP_strFs(x)</span>
+<span>CIP_strs(x)</span>
+</span></div><div><span class="t-lines"></span></div></div>
+</td>
+<td> These macros are used to create the first argment of different overloads of input_handler::setupDynamicInput().<br>
+#define CIP_strs(x) new const char*[x]<br>#define CIP_strFs new CIP::function&#60std::string>*[x]
+</td>
+</tr>
+
+</table>
+
+
+  <!-- -NOTES- -->
+<h3><span class="mw-headline" id="Notes">Notes</span></h3>
+<p>
+The CIP namespace contains a <a href="TYPE_namespace.pdf">namespace TYPE</a> which contains integral constants which correspond to the types which input_handler is compatible with.
+</p><p> 
+There are speciallized CIP::function-constructors for each of the prebuilt test and default functions in this library which take inputs specific to each function 
+(allowing for compile-time type-checking, a thing this library can be bad at providing) and call fptr(their_function, those_inputs...).
+</p><p> 
+The naming convention for those prebuilt functions is camelCase. Their constructors keep the same names, but the naming convention changes:
+<ul>
+    <li>they are in UPPER_SNAKE_CASE</li>
+    <li>where there is a standalone capital F in the original name, it is lowercase in the constructor's name. If this forms pseudo-camelCase, no underscores are added (e.g. <code>STRfSUM</code>)</li>
+    <li><i>there is no constructor for NOT or NOTF</i></li>
+</p>
+
+<br>
+
+
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/string&amp;oldid=135461">https://en.cppreference.com/mwiki/index.php?title=cpp/string&amp;oldid=135461</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+
+</body></html>

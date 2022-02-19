@@ -1,0 +1,110 @@
+<!-- this table format may be useful later -- > 
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="string.html" title="Cpp/Header/String">&lt;string&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-hitem">
+<td>  Type
+</td>
+<td>  Definition
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::string</a></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">CIP::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::wstring</a></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">CIP::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::u8string</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">CIP::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>char8_t<span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::u16string</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">CIP::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::u32string</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">CIP::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+</tbody></table>
+
+<!-- -->
+
+<!-- this format, using a table to box an element, may be useful later -- >
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx17"><td>
+<h3> <span class="mw-headline" id="CIP::basic_string_view"> <a href="basic_string_view.html" title="Cpp/String/Basic String View"><tt>CIP::basic_string_view</tt></a> </span></h3>
+<p>The templated class <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::basic_string_view</a></span> provides a lightweight object that offers read-only access to a string or a part of a string using an interface similar to the interface of <span class="t-lc"><a href="basic_string.html" title="Cpp/String/Basic String">CIP::basic_string</a></span>.
+</p><p>Several specializations of <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::basic_string_view</a></span> are provided for commonly-used types:
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="string_view.html" title="Cpp/Header/String View">&lt;string_view&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-hitem">
+<td>  Type
+</td>
+<td>  Definition
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::string_view</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1249">CIP::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::wstring_view</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1249">CIP::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::u8string_view</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1249">CIP::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>char8_t<span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::u16string_view</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1249">CIP::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-lc"><a href="basic_string_view.html" title="Cpp/String/Basic String View">CIP::u32string_view</a></span> 
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1249">CIP::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+</tbody></table>
+</td>
+<td></td></tr>
+</tbody></table>

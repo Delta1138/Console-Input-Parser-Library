@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs"><head>
+<title>CIP::setupDynamicInput</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit">
+<link rel="edit" title="Edit" href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/mwiki/opensearch_desc.php" title="cppreference.com (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.cppreference.com/mwiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%2CMathJax%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+
+
+
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .macro {color: #e81eeb;}
+.cpp.source-cpp .class {color: #eb7100;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string_basic_string_setupDynamicInput skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">CIP::</span>setupDynamicInput</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="/w/cpp" title="cpp">cpp</a>&lrm; | <a href="/w/cpp/string" title="cpp/string">string</a>&lrm; | <a href="/w/cpp/string/basic_string" title="cpp/string/basic string">basic string</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+ <!-- TABLE -->
+<table><tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(1)</td>
+<td></td>
+</tr>
+
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> setupDynamicInput<span class="br0">(</span> <span class='kw4'>const char</span>* prompts[],&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<span class='kw4'>const char</span>* flagPrompt = <span class='kw4'>nullptr</span>, <span class='kw4'>const char</span>* flagHelpString = <span class='kw4'>nullptr</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+<td>  </td>
+</tr>
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> setupDynamicInput<span class="br0">(</span> <span class='kw4'>const char</span>* prompts[], <span class='kw4'>int</span> tests[],
+<span class='kw4'>const char</span>* flagPrompt = <span class='kw4'>nullptr</span>, <span class='kw4'>const char</span>* flagHelpString = <span class='kw4'>nullptr</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td>  </td>
+</tr>
+</tbody>
+
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(2)</td>
+<td></td>
+</tr>
+
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> setupDynamicInput<span class="br0">(</span> <span class='class'>function</span>&#60<span class="class">string</span>>* prompts[],&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<span class='kw4'>const char</span>* flagPrompt = <span class='kw4'>nullptr</span>, <span class='kw4'>const char</span>* flagHelpString = <span class='kw4'>nullptr</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+<td>  </td>
+</tr>
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> setupDynamicInput<span class="br0">(</span> <span class='class'>function</span>&#60<span class="class">string</span>>* prompts[], <span class='kw4'>int</span> tests[],
+<span class='kw4'>const char</span>* flagPrompt = <span class='kw4'>nullptr</span>, <span class='kw4'>const char</span>* flagHelpString = <span class='kw4'>nullptr</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td>  </td>
+</tr>
+</tbody>
+
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(3)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-until-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> setupDynamicInput<span class="br0">(</span> <span class='kw4'>const char</span>* prompt = "" <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td>  </td>
+</tr>
+</tbody>
+
+<tbody>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+
+
+<p>Used to enable and set the behavior of dynamic input
+</p>
+
+
+
+
+<div class="t-li1"><span class="t-li">1)</span> Sets up dynamic input with a list of uncahnging prompts </div>
+<div class="t-li1"><span class="t-li">2)</span> Sets up dynamic input with a list of prompts, which can change based on past input </div>
+<div class="t-li1"><span class="t-li">3)</span> Enables dynamic input, and makes it act like it's reading input from the command line. </div>
+
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Exceptions"><span class="tocnumber">3</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+
+
+  <!-- PARAMETERS -->
+<h3><span class="editsection">[<a href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td>  prompt
+</td>
+<td> -
+</td>
+<td>  prompt to display to the user before they input a string which will be interpreted as if it was command-line input to the program
+</td></tr>
+<tr class="t-par">
+<td>  prompts (const char **)
+</td>
+<td> -
+</td>
+<td>  An array of c-strings which will be displayed to the user in sequence as they input the values this program needs
+</td></tr>
+<tr class="t-par">
+<td>  prompts (function&#60string>**)
+</td>
+<td> -
+</td>
+<td>  an array of functions whose values will be displayed to the user in sequence as they input the values this program needs
+</td></tr>
+<tr class="t-par">
+<td>  tests
+</td>
+<td> -
+</td>
+<td>  an array of ints which correspond to the index of the test sequence which should run after each input. If not present, all tests will be reserved until after all input is provided
+</td></tr>
+<tr class="t-par">
+<td>  flagPrompt
+</td>
+<td> -
+</td>
+<td>  a prompt to display to the user before they enter the string which will set all the flags. If not present, the user will not be able to set any flags through dynamic input.<br>
+<b>Note:</b> Currently, if the user fails to input the name of a flag where one is expected, that input is ignored (which will typically cause its arguments to be ignored as well).
+This behavior may change in the future.
+</td></tr>
+<tr class="t-par">
+<td>  flagHelpString
+</td>
+<td> -
+</td>
+<td>  a prompt to display to the user if they input exactly "?" or "help" while setting flags. If not present, "?" and "help" don't do anything special there.
+</td></tr>
+</tbody></table>
+
+
+<h3><span class="editsection">[<a href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit&amp;section=2" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Return_value">Exceptions</span></h3>
+<p>None</p>
+
+
+  <!-- NOTES -->
+<h3><span class="editsection">[<a href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Return_value">Notes</span></h3>
+<p>Only one test sequence can be set to run after each input. This is an imperfection that I decided to accept so that I could finish the library faster, and will be fixed on request.</p>
+<p>If (1-2) is called, and the number of elements in prompts is less than the number of ordered vars, <nobr>invokes undefined behavior.</nobr><br>
+If (1-2) is called, and the number of elements in prompts is greater than the number of ordered vars, <nobr>the extra element(s) are ignored.</nobr></p>
+<p>Macros CIP_strs(n) and CIP_strFs(n) can be used to create the array provided to prompts.</p>
+
+
+
+  <!-- EXAMPLE -->
+<h3><span class="editsection">[<a href="/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Examples</span></h3>
+<div class="t-example">
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">// input_handler ih is declared earlier</span>
+<span class="co2">// with functions</span>
+ih.setupDynamicInput(CIP_strFs(3) {
+    STR("create or apply (c/a)? "),
+    STR("original file's name: "),
+    TERNARY(creating, "new file's name: ", "transform file's name: ")},
+    tests(1, 3, CIP::no_test),
+    "input flags: ",
+    "insert useful help message"
+});
+
+<span class="co2">// with strings</span>
+ih.setupDynamicInput(CIP_strs(3) {
+    "create or apply (c/a)? ",
+    "original file's name: ",
+    "other file's name: "}
+});
+
+<span class="co2">// imitate cmd line</span>
+ih.setupDynamicInput("provide an argument list, as you would if you "
+                     "were running this from cmd.exe: ");</span></pre></div></div>
+<p>Results:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1"><b>Case 1/2:</b>
+The first two prompts are always "create or apply (c/a)? " and "original file's name: ".
+The last prompt is always "other file's name: " in case 2, but in case 1 is 
+"new file's name: " if creating is true, and "transform file's name: " otherwise.
+
+<b>Case 1:</b>
+After the above, the final prompt "input flags: " is shown and the user gets an oppertunity
+to do so. If they input "?" or "help", "insert useful help message" is printed, then
+"input flags: " is displayed again and the user gets another chance to input flag values.
+
+<b>Case 3:</b>
+There is only one prompt, and the user's input to it is interpreted 
+as a command-line argument list.</pre></div></div> 
+</div>
+
+
+
+
+
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;oldid=135988">https://en.cppreference.com/mwiki/index.php?title=cpp/string/basic_string/setupDynamicInput&amp;oldid=135988</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+
+</body></html>

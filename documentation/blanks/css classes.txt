@@ -1,0 +1,4 @@
+
+.cpp.source-cpp .macro {color: #e81eeb;}
+.cpp.source-cpp .class {color: #eb7100;}
+.cpp.source-cpp .blue {color: #0000ff;}

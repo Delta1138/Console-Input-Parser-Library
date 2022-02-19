@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs"><head>
+<title>CIP::input_handler</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="input_handler&amp;action=edit">
+<link rel="edit" title="Edit" href="input_handler&amp;action=edit">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="cppreference.com (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.cppreference.com/mwiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%2CMathJax%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="https://en.cppreference.com/mwiki/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+
+
+
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .macro {color: #e81eeb;}
+.cpp.source-cpp .class {color: #eb7100;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string_input_handler skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">CIP::</span>input_handler</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="cpp.html" title="cpp">cpp</a>&lrm; | <a href="string.html" title="cpp/string">string</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+<!-- -HEADER TABLE AND DESCRIPTION- -->
+
+<table class="t-dcl-begin"><tbody>
+
+
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">
+<span class="kw1">class</span> input_handler<span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+
+</tbody></table>
+
+<p>
+
+input_handler offers a fairly comprehensive interface through which one can clearly and concisely program the code which processes the arguments which were passed to the program 
+through the command line, with the option of having the class prompt the user for input if none are passed in that way.
+
+</p><p>
+
+All programs which use the CIP library will process input in a similar way. <a href="description.pdf">A comprehensive description of this class
+and how to use it can be found in this linked pdf</a>, but here are the most important points about how it works:
+
+<ul>
+    <li>
+    There are (up to) two types of arguments, "ordered variables" and "flags"
+    </li><li>
+    flags are named variables which take a programmer-set number of arguments.
+    They begin with "/theFlagsName" (where '/' is a delimiter set by the programmer)
+    </li><li>
+    Flag arguments are separated by spaces, or any other equivalent command-line delimiter.
+    </li><li>
+    Flags always take the same number of arguments every time they are set
+    </li><li>
+    Flags vars can be manually set to their default value by providing a string which you set for this purpose.
+    Using this, it is possible to create flags which effectively take a non-constant number of arguments, where
+    the last argument is followed by "some_string_which_denotes_end_of_arguments." It is currently impossible
+    to set up a flag which can take a truely arbitrary number of arguments in this way.
+    </li><li>
+    The flags "/?" and "/help" always exist, and will cause the program's help string to be printed.
+    The former <i>always</i> begins with '/'.
+    </li><li>
+    Ordered variables are arguments which are not flags. In the windows command <code>"copy a b"</code>, 
+    "a" is passed to ordered var 1 and "b" is passed to ordered var 2.
+    </li><li>
+    The type of a given ordered var is always the same every time the program is run. Previous arguments
+    currently cannot be used to inform what future arguments should be.
+    </li><li>
+    There is no designated time for flags to be input. Given a program with flags /n which accept n inputs each,
+    the following are all equivalent argument lists <nobr>(flags and their arguments are underlined, ordered vars are bold)</nobr>:
+    <code><ul>
+        <li><u>/0</u> <u>/1 +</u> <u>/4 x y z *</u> <b>a</b> <b>b</b> <b>c</b> <b>d</b></li>
+        <li><b>a</b> <b>b</b> <b>c</b> <b>d</b> <u>/0</u> <u>/1 +</u> <u>/4 x y z *</u></li>
+        <li><b>a</b> <b>b</b> <u>/4 x y z *</u> <u>/0</u> <u>/1 +</u> <b>c</b> <b>d</b></li>
+        <li><b>a</b> <u>/4 x y z *</u> <b>b</b> <u>/0</u> <b>c</b> <u>/1 +</u> <b>d</b></li>
+    </ul></code></li>
+</ul>
+
+</p>
+
+
+
+ <!-- END OF DESCRIPTION -->
+
+
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Template_parameters.html"><span class="tocnumber">1</span> <span class="toctext">Template parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Member_types.html"><span class="tocnumber">2</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Member_functions.html"><span class="tocnumber">3</span> <span class="toctext">Member functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Element_access.html"><span class="tocnumber">3.1</span> <span class="toctext">Element access</span></a></li>
+<li class="toclevel-2"><a href="#Iterators.html"><span class="tocnumber">3.2</span> <span class="toctext">Iterators</span></a></li>
+<li class="toclevel-2"><a href="#Capacity.html"><span class="tocnumber">3.3</span> <span class="toctext">Capacity</span></a></li>
+<li class="toclevel-2"><a href="#Operations.html"><span class="tocnumber">3.4</span> <span class="toctext">Operations</span></a></li>
+<li class="toclevel-2"><a href="#Search.html"><span class="tocnumber">3.5</span> <span class="toctext">Search</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Constants.html"><span class="tocnumber">4</span> <span class="toctext">Constants</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Non-member_functions.html"><span class="tocnumber">5</span> <span class="toctext">Non-member functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Input.2Foutput"><span class="tocnumber">5.1</span> <span class="toctext">Input/output</span></a></li>
+<li class="toclevel-2"><a href="#Numeric_conversions.html"><span class="tocnumber">5.2</span> <span class="toctext">Numeric conversions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Literals.html"><span class="tocnumber">6</span> <span class="toctext">Literals</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Helper_classes.html"><span class="tocnumber">7</span> <span class="toctext">Helper classes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Deduction_guides_.28since_C.2B.2B17.29"><span class="tocnumber">8</span> <span class="toctext">Deduction guides <span></span></span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Notes.html"><span class="tocnumber">9</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Example.html"><span class="tocnumber">10</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also.html"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+
+
+<h3><span class="editsection">[<a href="input_handler&amp;action=edit&amp;section=3" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="input_handler.html"> <span class="t-lines"><span>(constructor)</span></span></a></div></div>
+</td>
+<td>  constructs an <code>input_handler</code> <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_constructor&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+<h5> <span class="mw-headline" id="Observers">  Behaviour/Constant-setting functions </span></h5>
+
+<table class="t-dsc-begin"><tbody>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setEscape.html" title="setEscape"> <span class="t-lines"><span>setEscape</span></span></a></div></div>
+</td>
+<td>   sets the character which is treated as an escape character  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setFlagDelim.html" title="setFlagDelim"> <span class="t-lines"><span>setFlagDelim</span></span></a></div></div>
+</td>
+<td>   sets the character which marks the start of flags
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setFlagVarDefaultMarker.html" title="setFlagVarDefaultMarker"> <span class="t-lines"><span>setFlagVarDefaultMarker</span></span></a></div></div>
+</td>
+<td>   sets the character which explicitly sets a single flag argument to its default value  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setFlagFillDefaultMarker.html" title="setFlagFillDefaultMarker"> <span class="t-lines"><span>setFlagFillDefaultMarker</span></span></a></div></div>
+</td>
+<td>   sets the character which explicitly sets the rest of a flag's arguments to their default values   <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setFlagDefaultMarkers.html" title="setFlagDefaultMarkers"> <span class="t-lines"><span>setFlagDefaultMarkers</span></span></a></div></div>
+</td>
+<td>   sets the characters which explicitly set a flag's argument(s) to their default values   <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setHelpMessage.html" title="setHelpMessage"> <span class="t-lines"><span>setHelpMessage</span></span></a></div></div>
+</td>
+<td>   sets the string which is printed when the user passes /? or [flagDelim]help as the first argument  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setMinOrderedInput.html" title="setMinOrderedInput"> <span class="t-lines"><span>setMinOrderedInput</span></span></a></div></div>
+</td>
+<td>   sets the minimum number of non-flag inputs which the user must provide  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="preventExcessiveInput.html" title="preventExcessiveInput"> <span class="t-lines"><span>preventExcessiveInput</span></span></a></div></div>
+</td>
+<td>   tells the class to throw an <a href="../exceptions/excessive_input.html">excessive_input</a> exception if the user inputs more non-flag inputs than there are ordered vars  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="dynamicInput_enableRepeatedClosingTests.html" title="dynamicInput_enableRepeatedClosingTests"> <span class="t-lines"><span>dynamicInput_enableRepeatedClosingTests</span></span></a></div></div>
+</td>
+<td>   typically, if a test is run during dynamic input prior to the final run of all the tests, it will not be run again during said final run. This function changes that behavior.  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+</tbody></table>
+
+<h5> <span class="mw-headline" id="Observers">  Initial setup (functions here must be run before their corresponding functions in the next section)</span></h5>
+
+<table class="t-dsc-begin"><tbody>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setNumOrderedVars.html" title="setNumOrderedVars"> <span class="t-lines"><span>setNumOrderedVars</span></span></a></div></div>
+</td>
+<td>   tells the class how many times setOrderedVar() will be called afterwards. Can be called through CIP_ORDERED_START and CIP_ORDERED_END  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setNumFlags.html" title="setNumFlags"> <span class="t-lines"><span>setNumFlags</span></span></a></div></div>
+</td>
+<td>   tells the class how many times setFlag() will be called afterwards. Can be called through CIP_FLAGS_START and CIP_FLAGS_END  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setNumTests.html" title="setNumTests"> <span class="t-lines"><span>setNumTests</span></span></a></div></div>
+</td>
+<td>   tells the class how many times setTest() will be called afterwards. Can be called through CIP_TESTS_START and CIP_TESTS_END  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+</tbody></table>
+
+<h5> <span class="mw-headline" id="Observers">  Main setup; contain variables in the class </span></h5>
+
+<table class="t-dsc-begin"><tbody>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setFlag.html" title="setFlag"> <span class="t-lines"><span>setFlag</span></span></a></div></div>
+</td>
+<td>   Sets up a flag which will be recognized during interpretInput()  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setOrdered.html" title="setOrdered"> <span class="t-lines"><span>setOrdered</span></span></a></div></div>
+</td>
+<td>   Sets a non-flag input which will be recognized during interpretInput(). Ordered variables must be set in the order in which they are to be input  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setTest.html" title="setTest"> <span class="t-lines"><span>setTest</span></span></a></div></div>
+</td>
+<td>   Sets a test which will be run after all inputs are processed and all applicable defaults are set  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="setupDynamicInput.html" title="setTest"> <span class="t-lines"><span>setupDynamicInput</span></span></a></div></div>
+</td>
+<td>   If used, allows the user to input no arguments to the program, then set those arguments as the program begins to run <nobr>(which indirectly allows them to start the program outside of command prompt)</nobr>  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+</tbody></table>
+
+<h5> <span class="mw-headline" id="Observers">  Activate class and cleanup </span></h5>
+
+<table class="t-dsc-begin"><tbody>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="interpretInput.html" title="interpretInput"> <span class="t-lines"><span>interpretInput</span></span></a></div></div>
+</td>
+<td>   Must be run after every setup function, converts the provided (argc, argv) and setup data into values in the variables contained in the class  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><span class="t-lines"><span><a href="~input_handler.html">(destructor)</a></span></span></div></div>
+</td>
+<td>  destroys the input_handler, deallocating a large amount of memory as it does so. Typically, this will destroy all memory which was allocated spcifically for this class while leaving
+everything else intact (allowing you to use 'new' while passing arguments to this class' functions), but it is a good idea to read through what this function does so that you understand what will be destroyed with this class <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+
+</tbody></table>
+
+<h5> <span class="mw-headline" id="Observers">  Miscellaneous </span></h5>
+
+<table class="t-dsc-begin"><tbody>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="debug_listOutput.html" title="debug_listOutput"> <span class="t-lines"><span>debug_listOutput</span></span></a></div></div>
+</td>
+<td>   lists the current value of every variable provided to the class, as well as whether each flag was set manually or not  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="getPath.html" title="getPath"> <span class="t-lines"><span>getPath</span></span></a></div></div>
+</td>
+<td>   interprets argv[0] as a string containing a path and program name, and returns the path  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="getProgramName.html" title="getProgramName"> <span class="t-lines"><span>getProgramName</span></span></a></div></div>
+</td>
+<td>   interprets argv[0] as a string containing a path and program name, and returns the name  <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/input_handler/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+</tbody></table>
+
+ <!-- POP-UP SETUP -->
+<style type="text/css">
+dialog { display: block; bottom: 10em; }
+dialog:not(:target):not([open]) { display: none; }
+</style>
+
+ <!-- NOTES AND EXAMPLE -->
+<h3><span class="editsection">[<a href="input_handler&amp;action=edit&amp;section=8" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p> Variables contained in this class are required to belong to <a href="#dialog">this list of types</a>
+</p>
+<dialog id="dialog">
+<h2>Types compatible with input_handler:</h2>
+<p>
+bool			      <br>
+char			      <br>
+std::string		      <br>
+(unsigned) char		  <br>
+(unsigned) short      <br>
+(unsigned) int        <br>
+(unsigned) long		  <br>
+(unsigned) long long  <br>
+float		          <br>
+double		          <br>
+long double           <br>
+boolstr		          <br>
+intstr                <br>
+                      <br>
+</p>
+<a href="#!">Close</a>
+</dialog>
+
+<h3><span class="editsection">[<a href="input_handler&amp;action=edit&amp;section=9" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<p>This library comes with an .cpp file which demonstrates how to use it, and by extension, how to use this class. Assuming said file has not been moved relative to this file, <a href="../../example.cpp">it can be viewed here</a>.
+</p>
+
+<br>
+
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/string/input_handler&amp;oldid=134916">https://en.cppreference.com/mwiki/index.php?title=cpp/string/input_handler&amp;oldid=134916</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="Category:Pages_with_unreviewed_LWG_DR_marker.html" title="Category:Pages with unreviewed LWG DR marker">Pages with unreviewed LWG DR marker</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+		
+</body></html>

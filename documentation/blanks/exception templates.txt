@@ -1,0 +1,3 @@
+<p><span class="t-rev-inl t-since-cxx11"><span>
+In any case, if an exception is thrown for any reason, this function has no effect (strong exception guarantee).</span> <span></span></span>
+</p>

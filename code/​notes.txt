@@ -1,0 +1,1 @@
+framework and pch are artifacts of my compiler (MSVC 2017), no need to include them in your project

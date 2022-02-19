@@ -1,0 +1,13 @@
+<h3><span class="editsection">[edit]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example">
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;CIP.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+{
+    <span class="co1">/* code goes here */</span> <span class="macro">NULL</span> <span class="kw4">int</span> std::<span class="class">string</span>
+    
+}</pre></div></div>
+<p>Results:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">results text goes here</pre></div></div> 
+</div>

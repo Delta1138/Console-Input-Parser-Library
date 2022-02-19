@@ -1,0 +1,6 @@
+replace -THE-FUNCTION-NAME- with the function's name
+replace  -THE-RETURN-TYPE-  with the function's return type
+
+find THE-TABLE to add the template template to the table
+
+for each section after that (parameters, return value, exceptions, notes, example, see also), there is a comment which is that section's name in all caps
